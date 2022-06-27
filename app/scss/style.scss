@@ -4,4 +4,33 @@
 @import 'libs';
 @import 'global';
 
+.header{
+    &__inner{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 120px;
+    }
+    // .menu{
+    //     &__list{
+    //         это бред
+    //     }
+    // }
+}
+
+.logo{
+    margin: 0 auto;
+}
+
+.menu{
+    padding-left: 35px;
+    padding-right: 60px;
+    &__list{
+        display: flex;
+    }
+    &__list-item{
+        
+    }
+}
+
 
