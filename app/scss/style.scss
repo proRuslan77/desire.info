@@ -16,6 +16,12 @@
     //         это бред
     //     }
     // }
+    &__btn{
+        background-color: transparent;
+        border: none;
+        padding: 0;
+        cursor: pointer;
+    }
 }
 
 .logo{
@@ -23,12 +29,28 @@
 }
 
 .menu{
-    padding-left: 35px;
-    padding-right: 60px;
+    // padding-left: 35px;
+    // padding-right: 60px;
+    padding-right: 15px;
     &__list{
         display: flex;
     }
+    // &__list-item + .menu__list-item{
+    //     padding-left: 80px;
+    // } 
     &__list-item{
+        padding-right: 45px;
+        padding-left: 35px;
+    }
+    &__list-link{
+        @extend %title-font;
+        color: rgba(54, 56, 56, 0.9033);
+        line-height: 22px;
+    }
+}
+
+.footer{
+    &__content{
         
     }
 }

@@ -1,26 +1,16 @@
 
 const { src, dest, watch, parallel, series } = require('gulp');
-
 const scss  = require('gulp-sass')(require('sass'));
-
 const concat = require('gulp-concat');
-
 const browserSync = require('browser-sync').create();
-
 const uglify = require('gulp-uglify-es').default;
-
 const autoprefixer = require('gulp-autoprefixer');
-
 const imagemin = require('gulp-imagemin');
-
 const del = require('del');
-
 
 function cleanDist() {
     return del('dist')
 }
-
-
 
 
 function images() {
@@ -42,7 +32,6 @@ function images() {
 }
 
 
-
 function scripts() {
     return src([
         'node_modules/jquery/dist/jquery.js',
@@ -55,7 +44,6 @@ function scripts() {
 }
 
 
-
 function browsersync () {
     browserSync.init({
         server : {
@@ -64,7 +52,6 @@ function browsersync () {
         //port: 3000
     });
 }
-
 
 
 function styles() {
@@ -80,13 +67,11 @@ function styles() {
 }
 
 
-
 function watching() {
     watch(['app/scss/**/*.scss'], styles)
     watch(["app/*.html"]).on('change', browserSync.reload)
     watch(['app/js/**/*.js', '!app/js/main.min.js'], scripts)
 }
-
 
 
 function build() {
@@ -99,14 +84,12 @@ function build() {
         .pipe(dest('dist'))
 }
 
-
 exports.cleanD = cleanDist;
 exports.ima = images;
 exports.scri = scripts;
 exports.bro = browsersync;
 exports.sty = styles;
 exports.wat = watching;
-
 
 exports.bil = series(cleanDist, images, build)
 exports.default = parallel(styles, scripts, browsersync, watching)
