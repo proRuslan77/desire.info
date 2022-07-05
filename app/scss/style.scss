@@ -29,15 +29,10 @@
 }
 
 .menu{
-    // padding-left: 35px;
-    // padding-right: 60px;
     padding-right: 15px;
     &__list{
         display: flex;
     }
-    // &__list-item + .menu__list-item{
-    //     padding-left: 80px;
-    // } 
     &__list-item{
         padding-right: 45px;
         padding-left: 35px;
@@ -46,6 +41,20 @@
         @extend %title-font;
         color: rgba(54, 56, 56, 0.9033);
         line-height: 22px;
+    }
+    &__list-link--active{
+        padding-bottom: 4px;
+        position: relative;
+        &::after{
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            border-radius: 1px;
+            background-color: rgba($title, .7);
+        }
     }
 }
 
@@ -187,6 +196,7 @@
     right: 0;
     top: 0;
     bottom: 0;
+    z-index: 5px;
     max-width: 694px;
     width: 100%;
     background-color: #fff;
@@ -237,6 +247,26 @@
     }
     &__images{
         max-width: 485px;
+    }
+}
+
+.breadcrumbs{
+    background: rgba(#dfdfdf, .5);
+    padding: 13px 14px;
+    &__list{
+        display: flex;
+    }
+    &__item::after{
+        content: '/';
+        margin-left: -4px;
+        margin-right: 4px;
+    }
+    &__item:last-child::after{
+        display: none;
+    }
+    &__link{
+        font-size: 14px;
+        color: $default;
     }
 }
 
@@ -483,10 +513,138 @@
 
 .gallery{
     padding: 80px 0 90px;
+    &__buttons{
+        text-align: center;
+        margin-bottom: 40px;
+    }
+    &__btn{
+        margin: 0 13px;
+        border: 1px solid #454647;
+        background-color: transparent;
+        border-radius: 20px;
+        padding: 6px 16px;
+        color: #8f8d8d;
+        font-size: 14px;
+        font-weight: 600;
+        cursor: pointer;
+    }
+    .mixitup-control-active{
+        background-color: #ffef35;
+        border: 1px solid #454647;
+        color: $title;
+    }
+    &__items{
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        grid-gap: 30px 35px;
+    }
+    &__item:first-child{
+        grid-column: span 2;
+        grid-row: span 2;
+    }
+    &__item img{
+        object-fit: cover;
+        width: 100%;
+        max-height: 1150px;
+        height: 100%;
+    }
 }
 
-.gallery__buttons{
-    text-align: center;
+.blog-box{
+    padding-bottom: 100px;
+    &__title{
+        color: $title;
+        @extend %title-font;
+        font-size: 36px;
+        line-height: 51px;
+        margin: 0 auto 30px;
+        text-align: center;
+        max-width: 430px;
+    }
+    &__items{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 30px;
+    }
+    &__img-link{
+        margin-bottom: 19px;
+        display: inline-block;
+    }
+    &__links{
+        margin-bottom: 9px;
+        font-size: 14px;
+        font-weight: 600;
+        color: #707070;
+    }
+    &__date,
+    &__author,
+    &__theme{
+        color: inherit;
+    }
+    &__item-title{
+        color: $title;
+        font-size: 24px;
+        line-height: 38px;
+        @extend %title-font;
+    }
 }
+
+.about{
+    &__prev{
+        background-image: url(../images/about-bg.jpg);
+        background-repeat: no-repeat;
+        background-position: top center;
+        background-size: cover;
+        text-align: center;
+        padding: 160px 0;
+        margin-top: -53px;
+    }
+    &__prev-title{
+        color: $title;
+        @extend %title-font;
+        font-size: 60px;
+        line-height: 80px;
+    }
+    &__content{
+        padding: 130 0 40px;
+    }
+    &__title{
+        color: $title;
+        @extend %title-font;
+        font-size: 36px;
+        line-height: 60px;
+        padding-bottom: 22px;
+        margin-bottom: 22px;
+        position: relative;
+        &::after{
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 200px;
+            height: 1px;
+            background-color: #6d7278;
+        }
+    }
+    &__text{
+        padding-left: 284px;
+        p{
+            margin-bottom: 30px;
+        }
+    }
+    &__popup{
+        background-image: url(../images/popup-bg.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: top center;
+        min-height: 414px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+
 
 
