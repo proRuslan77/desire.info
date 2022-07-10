@@ -14,6 +14,13 @@ $(function () {
       autoplay: true
    });
 
+   $('.contact-slider').slick({
+      slidesToShow: 10,
+      slidesToScroll: 10,
+      dots: true,
+      arrows: false
+   });
+
    var mixer = mixitup('.gallery__inner', {
       load: {
          filter: '.living'
