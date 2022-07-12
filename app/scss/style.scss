@@ -1103,6 +1103,7 @@
         border-bottom: 1px solid #DFDFDF;
         display: flex;
         justify-content: space-between;
+        margin-bottom: 35px;
     }
     &__link{
         width: 243px;
@@ -1133,5 +1134,100 @@
             background-image: url(../images/arrow-next.svg);
             right: 0;
         }
+    }
+    &__comments-title{
+        color: $title;
+        @extend %title-font;
+        line-height: 31px;
+        font-size: 20px;
+        margin-bottom: 15px;
+    }
+    &__comments-item{
+        display: flex;
+        justify-content: space-between;
+        align-items: start;
+        margin-bottom: 40px;
+    }
+    &__comments-avatar{
+        width: 64px;
+        height: 64px;
+        object-fit: cover;
+        border-radius: 50%;
+        margin-right: 13px;
+    }
+    &__reply{
+        background-color: transparent;
+        margin-left: 5px;
+        border: none;
+        padding: 0;
+        font-size: 14px;
+        font-weight: 600;
+        color: #707070;
+    }
+    &__comments-name{
+        color: $title;
+        @extend %title-font;
+        line-height: 23px;
+    }
+    &__comments-date{
+        margin-bottom: 10px;
+        font-size: 14px;
+        color: #A1A1A1;
+    }
+    &__form{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    &__form-title{
+        margin-bottom: 25px;
+        color: $title;
+        @extend %title-font;
+        line-height: 23px;
+    }
+    &__form-textarea{
+        width: 100%;
+        border: 1px solid #DFDFDF;
+        border-radius: 24px;
+        padding: 14px 17px;
+        min-height: 125px;
+        margin-bottom: 12px;
+        resize: none;
+        &::placeholder{
+            color: #A1A1A1;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 27px;
+            font-family: 'Open Sans', sans-serif;
+        }
+    }
+    &__form-input{
+        border: 1px solid #DFDFDF;
+        border-radius: 20px;
+        padding: 6px 17px;
+        margin-bottom: 20px;
+        width: 48%;
+        &::placeholder{
+            color: #A1A1A1;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 27px;
+            font-family: 'Open Sans', sans-serif; 
+        }
+    }
+    &__form-label{
+        width: 100%;
+        margin-bottom: 20px;
+        font-size: 14px;
+        color: #A1A1A1;
+    }
+    &__form-btn{
+        border: none;
+        background-color: $title;
+        color: #fffff0;
+        font-weight: 600;
+        border-radius: 21px;
+        padding: 6px 60px;
+        cursor: pointer;
     }
  }
